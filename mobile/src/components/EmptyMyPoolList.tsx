@@ -1,4 +1,5 @@
 import { Row, Text, Pressable } from 'native-base';
+import React from 'react';
 
 interface Props {
   code: string;
@@ -6,9 +7,9 @@ interface Props {
 
 export function EmptyMyPoolList({ code }: Props) {
   return (
-    <Row flexWrap="wrap" justifyContent="center" p={4}>
-      <Text color="gray.200" fontSize="sm">
-        Esse bolão ainda não tem participantes, que tal 
+    <Row flexWrap="wrap" justifyContent="center" p={3}>
+      <Text color="gray.200" fontSize="sm" textAlign='center'>
+        Esse bolão ainda{'\n'} não tem participantes, que tal 
       </Text>
 
       <Pressable onPress={() => {}}>
