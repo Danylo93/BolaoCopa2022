@@ -54,11 +54,11 @@ setIsLoading(false);
     fetchPoolDetails();
    }, [id])
 
-  // if(isLoading){
-  //   return (
-  //   <Loading />
-  //   )
-  // }
+  if(isLoading){
+    return (
+    <Loading />
+    )
+  }
 
   return(
     <VStack flex={1} bgColor="gray.900">
@@ -86,7 +86,7 @@ setIsLoading(false);
             onPress={()=>setOptionSelected('ranking')}
             />
           </HStack>
-          <Guesses poolId={poolDetails.id} />
+          <Guesses poolId={poolDetails.id} code={poolDetails.code} />
 
         </VStack> : <EmptyMyPoolList code={poolDetails.code} />
       }

@@ -1,16 +1,18 @@
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { PlusCircle, SoccerBall} from 'phosphor-react-native'
 import { useTheme } from 'native-base';
-import React from 'react';
+import React, { useContext}from 'react';
 import { New } from '../screens/New';
 import { Pools } from '../screens/Pools';
 import { Platform} from 'react-native';
 import { Find } from '../screens/Find';
 import { Details } from '../screens/Details';
+import { AuthContext } from '../contexts/AuthContext';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export function AppRoutes() {
+  const data = useContext(AuthContext);
   const { colors, sizes} = useTheme();
 
   const size = sizes[6];
