@@ -13,9 +13,9 @@ export function Routes() {
     <NavigationContainer>
       
         {user.name ? 
-        <AuthContextProvider>
+       
           <AppRoutes /> 
-        </AuthContextProvider>
+        
         : <SignIn />}
       
     </NavigationContainer>
