@@ -5,15 +5,16 @@ import { NativeBaseProvider, StatusBar } from "native-base";
 import { THEME} from './src/styles/theme';
 import { Loading } from "./src/components/Loading";
 
-import { AuthContextProvider } from "./src/contexts/AuthContext";
+
 import { Routes } from "./src/routes";
+import { AuthProvider } from "./src/hooks/useAuth";
 
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold});
   return (
     <NativeBaseProvider theme={THEME}>
-      <AuthContextProvider>
+      <AuthProvider>
       <StatusBar 
       barStyle="light-content"
       backgroundColor="transparent"
@@ -21,7 +22,7 @@ export default function App() {
       />
         {fontsLoaded ? <Routes />  : <Loading />}
 
-      </AuthContextProvider>
+      </AuthProvider>
       
     </NativeBaseProvider>
   );
